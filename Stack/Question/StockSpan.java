@@ -2,9 +2,9 @@ package Question;
 
 import java.util.Stack;
 
-public class StackSpan {
+public class StockSpan {
 
-    public static void StockSpan(int stocks[],int span[],Stack<Integer>s){
+    public static void stockSpan(int stocks[],int span[],Stack<Integer>s){
         //For first day's Span
         span[0]=1;
         s.push(1);
@@ -32,7 +32,7 @@ public static void main(String[] args) {
     int stocks[]={100,80,60,70,60,85,100};
     int span[]=new int[stocks.length];
 
-    StockSpan(stocks, span, s);
+    stockSpan(stocks, span, s);
 
     for(int i=0;i<span.length;i++){
         System.out.print(span[i]+" ");
