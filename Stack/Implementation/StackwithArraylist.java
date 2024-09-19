@@ -21,7 +21,7 @@ public void push(int data ){
 
 //pop
 public  int pop(){
-    if (isEmpty()) {
+    if (isEmpty()){
         return -1;
     }
     int top=list.get(list.size()-1);
@@ -41,7 +41,7 @@ public  int  peek(){
 
 
 
-    public static void main(String[] args) {
+public static void main(String[] args) {
     Stack s1=new Stack();
     s1.push(1); 
     s1.push(2);

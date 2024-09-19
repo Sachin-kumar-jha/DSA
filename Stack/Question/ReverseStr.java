@@ -13,14 +13,11 @@ public static void reverseStr(Stack<Character>s,String str){
     while (!s.isEmpty()) {
         char curr=s.pop();
         result.append(curr);
+       
 }
-    System.out.println(result);
+    
+    System.out.println(result.toString());
 }
-
-
-
-
-
 
 
 
