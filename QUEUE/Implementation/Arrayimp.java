@@ -17,7 +17,6 @@ return rear==-1;
 }
 
 //add element
-
 public void add(int data){
     if (rear==size-1) {
        System.out.println("full"); 
@@ -41,6 +40,7 @@ public  int remove(){
 return front;
 }
 
+//front 
 public int  peek(){
   int front=arr[0];
   return front;
