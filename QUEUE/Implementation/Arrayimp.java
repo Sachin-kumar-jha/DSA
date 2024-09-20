@@ -1,5 +1,6 @@
 package QUEUE.Implementation;
 
+
 public class Arrayimp {
 
 static class Queue{
@@ -59,6 +60,6 @@ public int  peek(){
             System.out.println(q.peek());
             q.remove();
 
-        }
+         }
     }
 }
