@@ -1,4 +1,4 @@
-package LL;
+package lList;
 public class lList {
     public static class Node {
         int data;
