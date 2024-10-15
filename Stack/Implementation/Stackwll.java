@@ -72,10 +72,8 @@ public void print(){
         s.push(2);
         s.push(3);
        
-       int peek=s.peek();
-       System.err.println("Peek val of Stack"+" "+peek);
-       int data= s.pop();
-       System.out.println(data);
+       System.out.println("Peek val of Stack"+" "+s.peek());
+       System.out.println(s.pop());
 
         s.print();
     }

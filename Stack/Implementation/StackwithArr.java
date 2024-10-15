@@ -23,15 +23,15 @@ public class StackwithArr {
         arr[top]=data;
     }
 
-    public void pop(){
+    public int pop(){
         if (isEmpty()) {
             System.out.println("stack is empty");
-            return;
+            return -1;
         }
         
-        // int data=arr[top];
-        // System.out.println(data);
+        int data=arr[top];
         top--;
+        return data;
     }
 
     public int  peek(){
@@ -46,10 +46,13 @@ public class StackwithArr {
         s1.push(3);
         s1.push(4);
 
-        while (!s1.isEmpty()) {
-            System.out.println(s1.peek());
-            s1.pop();
-        }
+        System.out.println(s1.pop());
+        System.out.println(s1.peek());
+
+        // while (!s1.isEmpty()){
+        //     System.out.println(s1.peek());
+        //     s1.pop();
+        // }
         
 
 

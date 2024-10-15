@@ -1,5 +1,6 @@
 package LL;
-public class lList {
+
+public  class lList {
     public static class Node {
         int data;
         Node next;
@@ -12,10 +13,12 @@ public class lList {
 
     public static Node head;
     public static Node tail;
+    public static int size;
 
     // ADD FIRST
     public void addFirst(int data) {
         Node newNode = new Node(data);
+        size++;
         if (head == null) {
             head = tail = newNode;
             return;
@@ -70,7 +73,7 @@ public class lList {
 
     public void Reverse(int size) {
         Node prev = null;
-        Node curr = tail = head;
+        Node curr=tail=head;
         Node next;
         if (size == 1) {
             System.out.println("Reverse function called");
@@ -86,7 +89,7 @@ public class lList {
     }
 
     // DISPLAY DATA OF LL
-    public static void displayData() {
+    public   void displayData() {
         Node temp = head;
         if (temp == null) {
             System.out.println("ll is empty");
@@ -117,7 +120,7 @@ public class lList {
         return idx + 1;
     }
 
-    public int recSearch(int key) {
+    public int recSearch(int key){
         return helper(head, key);
     }
 
@@ -216,25 +219,27 @@ public static boolean isCyle(){
 
 
 public static void main(String[] args){
-          //lList ll = new lList();
-        // Scanner sc = new Scanner(System.in);
-        // int size = sc.nextInt();
+          lList ll = new lList();
+            ll.addFirst(1);
+            ll.addFirst(2);
+            ll.addFirst(3);
+            ll.addFirst(4);
+            ll.addFirst(5);
+           
 
-        // for (int i = 0; i < size; i++) {
-        //     int data = sc.nextInt();
-        //     ll.addFirst(data);
-        // }
+
   
-        head=new Node(1);
-        head.next=new Node(2);
-        head.next.next=new Node(3);
-        head.next.next.next=head;
-        System.out.println(isCyle());
-       // displayData();
+    //     head=new Node(1);
+    //     head.next=new Node(2);
+    //     head.next.next=new Node(3);
+    //     head.next.next.next=head;
+    //     System.out.println(isCyle());
+    //    // displayData();
+        ll.displayData();
 
-        // ll.displayData();
-        // ll.Reverse(size);
-        // ll.displayData();
+        // System.out.println(ll.recSearch(5));
+       // ll.Reverse(size);
+        ll.displayData();
         // ll.DeleteLast(size, 2);
         // ll.displayData();
 
