@@ -1,5 +1,4 @@
 package ARRAY;
-import java.util.*;
 public class MaxSumByPrefixsum {
     public static void printMaxSumSubarray(int arr[]){
         int currSum=0;
@@ -7,8 +6,9 @@ public class MaxSumByPrefixsum {
         int prefix[]=new int[arr.length];
 
         //Calculate prefix Array
-        for(int i=0;i<prefix.length;i++){
-            prefix[i]=prefix[i]+arr[i];
+
+        for(int i=1;i<prefix.length;i++){
+            prefix[i]=prefix[i-1]+arr[i];
         }
         for(int i=0;i<arr.length;i++){
             int start=i;
