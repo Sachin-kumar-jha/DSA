@@ -12,7 +12,7 @@ public static void towerofHanoi(int n, String src, String help,String Dest){
 }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         int n=2;
         towerofHanoi(n, "A", "B","C" );
     }
