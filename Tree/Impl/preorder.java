@@ -1,5 +1,9 @@
 package Tree.Impl;
 
+import java.util.*;
+
+
+
 public class preorder {
 
     static class Node{
@@ -13,7 +17,7 @@ public class preorder {
             }
     }
 
-    static class BinaryTree{
+    static class BinaryTree {
        static int idx = -1;
         public static Node buildTree(int nodes[]){
             idx++;
@@ -26,6 +30,63 @@ public class preorder {
             newNode.right = buildTree(nodes);
             return newNode;
         }
+
+       public static void Prorder(Node root){ //linear O(n)
+            if (root == null){
+           // System.out.print(-1 +" ");
+            return;
+            }
+            System.out.print(root.data+" ");
+            Prorder(root.left);
+            Prorder(root.right);
+            
+       }
+ 
+         public static void inorder(Node root){
+            if (root==null){
+                return;
+            }
+            inorder(root.left);
+            System.out.print(root.data +" ");
+            inorder(root.right);
+         }
+
+         public static void postorder(Node root){
+            if (root==null) {
+                return;
+            }
+            postorder(root.left);
+            postorder(root.right);
+            System.out.print(root.data +" ");
+         }
+
+
+         public static void levelOrder(Node root){
+
+            Queue<Node>q=new LinkedList<>();
+            q.add(root);
+            q.add(null);
+
+            while (!q.isEmpty()) {
+                Node currNode=q.remove();
+                if (currNode ==null){
+                       System.out.println();
+                       if (q.isEmpty()) {
+                        break;
+                       }else{
+                        q.add(null);
+                       }
+                }else{
+                    System.out.print(currNode.data + " ");
+                     if (currNode.left != null) {
+                        q.add(currNode.left);
+                     }
+                     if (currNode.right !=null) {
+                        q.add(currNode.right);
+                     }
+                }
+            }
+         }
     }
 
 
@@ -36,7 +97,10 @@ public class preorder {
         Node root=tree.buildTree(nodes);
         // Node rightRoot=root.right;
         // System.out.println(rightRoot.right.data);
-        System.out.println(root.left.data);
-
+       // System.out.println(root.left.data);
+       //tree.Prorder(root);
+       //tree.inorder(root);
+      // tree.postorder(root);
+      tree.levelOrder(root);
     }
 }
