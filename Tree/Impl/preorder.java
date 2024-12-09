@@ -21,7 +21,7 @@ public class preorder {
        static int idx = -1;
         public static Node buildTree(int nodes[]){
             idx++;
-            if (nodes[idx] == -1) {
+            if (nodes[idx] == -1){
                 return null;
             }
            
@@ -36,7 +36,7 @@ public class preorder {
            // System.out.print(-1 +" ");
             return;
             }
-            System.out.print(root.data+" ");
+            System.out.println(root.data+" ");
             Prorder(root.left);
             Prorder(root.right);
             
@@ -95,12 +95,12 @@ public class preorder {
 
         BinaryTree tree=new BinaryTree();
         Node root=tree.buildTree(nodes);
-        // Node rightRoot=root.right;
-        // System.out.println(rightRoot.right.data);
+        //Node rightRoot=root.right;
+       // System.out.println(rightRoot.left.data);
        // System.out.println(root.left.data);
-       //tree.Prorder(root);
+      // tree.Prorder(root);
        //tree.inorder(root);
-      // tree.postorder(root);
-      tree.levelOrder(root);
+      tree.postorder(root);
+      //tree.levelOrder(root);
     }
 }

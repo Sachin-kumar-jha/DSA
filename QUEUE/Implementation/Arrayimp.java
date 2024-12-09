@@ -56,6 +56,7 @@ public int  peek(){
         q.add(3);
         q.add(4);
 
+        q.remove();
         while (!q.isEmpty()) {
             System.out.println(q.peek());
             q.remove();
