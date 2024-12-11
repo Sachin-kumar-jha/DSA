@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion.Question;
 
 public class firstOccurence {
     public static int FirstOccurence(int arr[],int i,int key){

@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion.Question;
 public class printDec{
     public static void Print(int n){
         if (n==1) {

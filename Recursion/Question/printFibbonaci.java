@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion.Question;
 
 public class printFibbonaci {
     public static int printFibbonaciNumber(int n){

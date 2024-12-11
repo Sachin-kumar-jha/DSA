@@ -1,5 +1,5 @@
 
-package Recursion;
+package Recursion.Question;
 public class TowerOfHanoi{
 public static void towerofHanoi(int n, String src, String help,String Dest){
     if(n==1){

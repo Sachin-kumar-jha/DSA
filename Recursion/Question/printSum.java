@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion.Question;
 
 public class printSum{
     public static int PrintSumofNnaturalNumber(int n){

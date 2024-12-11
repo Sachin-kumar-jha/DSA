@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion.Question;
 
 public class factorial {
     public static int FactorialOfN(int n){
