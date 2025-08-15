@@ -23,6 +23,7 @@ if (arr[mid] > target) {
     
 
 }
+
 //mid lies on L2
 else{
   //case c right 
