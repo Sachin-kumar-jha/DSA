@@ -24,7 +24,7 @@ return halfPowerSq;
 }
     public static void main(String[] args) {
         int a=2;
-        int n=35;
+        int n=3;
         System.out.println(optimizePower(a, n));
     }
 

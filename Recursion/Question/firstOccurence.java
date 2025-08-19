@@ -32,4 +32,7 @@ public class firstOccurence {
         int arr[]={4,6};
         System.out.println(LastOccurence(arr, 0,5));
      }
+
+    
+     
 }
