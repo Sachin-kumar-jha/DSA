@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Permutation {
-    public List<List<Integer>> permute(int[] nums) {
+    public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         backtrack(nums,new ArrayList<>(),result);
         return result;
     }
     
-    public void backtrack(int nums[],List<Integer>list,List<List<Integer>>result){
+    public static void backtrack(int nums[],List<Integer>list,List<List<Integer>>result){
         if(list.size()==nums.length){
             result.add(new ArrayList<>(list));
             return;
@@ -24,4 +24,8 @@ public class Permutation {
         }
     }
 
+    public static void main(String[] args) {
+        int nums[]={3,2,1};
+       System.out.println(permute(nums));
+    }
 }
