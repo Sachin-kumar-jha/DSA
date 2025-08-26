@@ -1,12 +1,13 @@
 package ARRAY;
 public class MaxSumByPrefixsum {
-    public static void printMaxSumSubarray(int arr[]){
+    public static int printMaxSumSubarray(int arr[],int k){
         int currSum=0;
         int maxSum=Integer.MIN_VALUE;
         int prefix[]=new int[arr.length];
 
         //Calculate prefix Array
-
+ int count=0;
+ prefix[0] = arr[0];
         for(int i=1;i<prefix.length;i++){
             prefix[i]=prefix[i-1]+arr[i];
         }
@@ -14,17 +15,19 @@ public class MaxSumByPrefixsum {
             int start=i;
             for(int j=i;j<arr.length;j++){
                 int end=j;
-                currSum= start==0 ? prefix[end] : prefix[end]-prefix[start-1];
-          if(maxSum<currSum){
-            maxSum=currSum;
-          }
+                currSum = start==0 ? prefix[end] : prefix[end]-prefix[start-1];
+               if (currSum == k) {
+                count++;
+               }
             }
         }
 
-        System.out.println(maxSum);
+        return count;
     }
     public static void main(String[] args) {
-        int arr[]={1,2,-1,6,3,-1};
-        printMaxSumSubarray(arr);
+        int arr[]={1,1,1};
+        int k=2;
+        System.out.println( printMaxSumSubarray(arr,k));
+        // printMaxSumSubarray(arr,k);
     }
 }
