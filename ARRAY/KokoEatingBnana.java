@@ -3,7 +3,7 @@ package ARRAY;
 public class KokoEatingBnana {
     
     public static int minEatingSpeed(int[] piles, int h) {
-        int low=1,high=findMax(piles);
+        int low=1,high=piles[piles.length-1];
         while(low<=high){
             int mid = (low+high)/2;
             int totalHours=calculateTotalH(piles,mid);
