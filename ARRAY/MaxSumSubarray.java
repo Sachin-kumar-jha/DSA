@@ -14,7 +14,7 @@
 System.out.println(maxsm);
     }
     public static void main(String[] args) {
-        int arr[]={-2,-3,4,-1,-2,1,5,-3};
+        int arr[]={5,4,-1,7,8};
         MaxSum(arr);
     }
 }
