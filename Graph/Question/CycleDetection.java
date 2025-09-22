@@ -64,7 +64,7 @@ public static boolean detectCycle(ArrayList<Edge>[]graph){
     return false;
 }
 
-private static boolean detectCycleUtil(ArrayList<Edge>[] graph,boolean vis[],int curr,int parent) {
+public static boolean detectCycleUtil(ArrayList<Edge>[] graph,boolean vis[],int curr,int parent) {
      vis[curr]=true;
      for(int i=0;i<graph[curr].size();i++){
         Edge e = graph[curr].get(i);
