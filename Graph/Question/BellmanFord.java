@@ -97,7 +97,7 @@ public static void bellmanFord2(List<Edge>graph,int src,int V){
                 int wt=e.wt;
                 if(dist[u]!=Integer.MAX_VALUE && dist[u]+wt<dist[v]){
                     dist[v]=dist[u]+wt;
-                }
+                } 
          }
         }
 for(int i:dist){
