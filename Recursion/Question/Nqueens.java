@@ -7,6 +7,7 @@ public class Nqueens {
         if (row == board.length) {
             printBoard(board);
             return;
+
         }
 
         for (int i = 0; i < board.length; i++) {
@@ -55,7 +56,7 @@ public class Nqueens {
     }
 
     public static void main(String[] args) {
-        int n = 1;
+        int n = 4;
         char[][] board = new char[n][n];
 
         for (int i = 0; i < n; i++) {
@@ -64,6 +65,7 @@ public class Nqueens {
             }
         }
         nQueens(board, 0);
+   
     }
 }
 
