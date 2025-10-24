@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class CountPrime {
     public int countPrimes(int n) {
     
