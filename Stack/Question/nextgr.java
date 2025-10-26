@@ -1,3 +1,8 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.Map;
+
 class Solution {
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         // A hash map to store the next greater element for each number in nums2.
