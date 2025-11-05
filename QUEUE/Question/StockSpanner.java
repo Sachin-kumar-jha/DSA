@@ -1,4 +1,8 @@
 package QUEUE.Question;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 class StockSpanner {
     private static class Node {
         int price;
