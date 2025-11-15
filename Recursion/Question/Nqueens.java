@@ -7,7 +7,6 @@ public class Nqueens {
         if (row == board.length) {
             printBoard(board);
             return;
-
         }
 
         for (int i = 0; i < board.length; i++) {
