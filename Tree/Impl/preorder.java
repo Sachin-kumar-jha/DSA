@@ -31,12 +31,12 @@ public class preorder {
             return newNode;
         }
 
-       public static void Prorder(Node root){ //linear O(n)
+       public void Prorder(Node root){ //linear O(n)
             if (root == null){
            // System.out.print(-1 +" ");
             return;
             }
-            System.out.println(root.data+" ");
+            System.out.print(root.data+" ");
             Prorder(root.left);
             Prorder(root.right);
             
@@ -94,13 +94,13 @@ public class preorder {
         int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
 
         BinaryTree tree=new BinaryTree();
-        Node root=tree.buildTree(nodes);
+        Node root=BinaryTree.buildTree(nodes);
         //Node rightRoot=root.right;
        // System.out.println(rightRoot.left.data);
        // System.out.println(root.left.data);
-      // tree.Prorder(root);
+       //tree.Prorder(root);
        //tree.inorder(root);
-      tree.postorder(root);
+        tree.postorder(root);
       //tree.levelOrder(root);
     }
 }
