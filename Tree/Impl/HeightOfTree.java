@@ -54,6 +54,16 @@ public class HeightOfTree {
       int rfcSum= sumOfNodes(root.right);   
      return lfcSum+rfcSum+root.data;
     }
+
+    public static int calculateDiameter(Node root){
+        if(root==null)return 0;
+        int ldiam=calculateDiameter(root.left);
+        int rdiam=calculateDiameter(root.right);
+
+        int selfdiam=height(root.left)+height(root.right)+1;
+
+        return Math.max(Math.max(ldiam,rdiam),selfdiam);
+    }
     public static void main(String[] args) {
   int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
    Node tree=buildTree(nodes);
@@ -61,6 +71,8 @@ public class HeightOfTree {
 // //  System.out.print(height(tree));
 //  System.out.println(calculateNodes(tree));
 
- System.out.println(sumOfNodes(tree));
+System.out.println(calculateDiameter(tree));
+
+//  System.out.println(sumOfNodes(tree));
     }
 }
