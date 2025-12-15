@@ -48,11 +48,19 @@ public class HeightOfTree {
       return lfc+rfc+1;
     }
 
+    public static int sumOfNodes(Node root){
+        if(root == null) return 0;
+       int lfcSum= sumOfNodes(root.left);
+      int rfcSum= sumOfNodes(root.right);   
+     return lfcSum+rfcSum+root.data;
+    }
     public static void main(String[] args) {
   int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
    Node tree=buildTree(nodes);
-     Prorder(tree);
-//  System.out.print(height(tree));
- System.out.println(calculateNodes(tree));
+//      Prorder(tree);
+// //  System.out.print(height(tree));
+//  System.out.println(calculateNodes(tree));
+
+ System.out.println(sumOfNodes(tree));
     }
 }
