@@ -25,10 +25,10 @@ public class TopView {
          }
 
          public static void topView(Node root){
-            Queue<Info>q=new LinkedList<>();
-           Map<Integer,Node>map =new HashMap<>();
+            Queue<Info>q = new LinkedList<>();
+           Map<Integer,Node> map = new HashMap<>();
 
-           int min = 0 ,max=0;
+           int min = 0 , max=0;
 
            q.add(new Info(root,0));
            q.add(null);
@@ -49,11 +49,12 @@ public class TopView {
                 map.put(curr.hd, curr.node);
             }
             
-            if(curr.node.left!=null){
+            if(curr.node.left != null){
                 q.add(new Info(curr.node.left,curr.hd-1));
                 min = Math.min(min,curr.hd-1);
             }
-             if(curr.node.right!=null){
+            
+             if(curr.node.right != null){
                 q.add(new Info(curr.node.right,curr.hd+1));
                 max = Math.max(max,curr.hd+1);
             }
