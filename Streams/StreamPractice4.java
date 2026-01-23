@@ -1,5 +1,9 @@
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
+
+
 
 
 public class StreamPractice4 {
@@ -88,7 +92,10 @@ public class StreamPractice4 {
         // Expected: [3, 4]
         List<Integer> list1 = Arrays.asList(1, 2, 3, 4);
         List<Integer> list2 = Arrays.asList(3, 4, 5, 6);
-        
+        int n1 = list1.size();
+        int n2 = list2.size();
+    List<Integer>common =     list1.stream().filter(x->list2.contains(x)).toList();
+    System.out.println(common);
         // Your Stream code here
 
 
@@ -97,8 +104,19 @@ public class StreamPractice4 {
         // Expected: "mississippi"
         List<String> words2 = Arrays.asList("apple", "banana", "mississippi");
 
-        // Your Stream code here
-
+  String result =     words2.stream().max(Comparator.comparingInt(word->
+         word.chars()
+                          .boxed()
+                          .collect(Collectors.groupingBy(
+                                  Function.identity(),
+                                  Collectors.counting()
+                          )).values()
+                          .stream()
+                          .mapToInt(Long::intValue)
+                          .max()
+                          .orElse(0)
+    )).orElse("");
+System.out.println(result);
 
         // 9. Convert Map<K, List<V>> to Map<K, V> (Sum of Values)
         // Input: {A=[10,20], B=[5,5], C=[7]}
@@ -107,17 +125,21 @@ public class StreamPractice4 {
         map.put("A", Arrays.asList(10, 20));
         map.put("B", Arrays.asList(5, 5));
         map.put("C", Arrays.asList(7));
-
-        // Your Stream code here
-
+     Map<String,Integer> map2=  map.entrySet().stream().collect(Collectors.toMap(x->x.getKey(),e->e.getValue().stream().mapToInt(i->i).sum()));
+        System.out.println(map2);
 
         // 10. Check If Two Strings Are Rotations of Each Other
         // Input: "abcd", "cdab"
         // Expected: true
         String s1 = "abcd";
         String s2 = "cdab";
-
-        // Your Stream code here
+        boolean isRotation=false;
+        if(s1.length()==s2.length()){
+            if((s1+s1).contains(s2)){
+                isRotation=true;
+            }
+        }
+    System.out.println(isRotation);
     }
       private static boolean isPrime(int n){
             if(n<=1) return false;
