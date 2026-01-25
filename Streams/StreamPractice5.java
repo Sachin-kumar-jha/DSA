@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class StreamPractice5 {
@@ -90,15 +91,17 @@ System.out.println(count);
         // Expected: {java=2, stream=1, api=1}
         List<String> words2 = Arrays.asList("java", "stream", "java", "api");
 
-        // Your Stream code here
-
+           Map<String,Long>ans =  words2.stream().collect(Collectors.groupingBy(x->x,Collectors.counting()));
+           System.out.println(ans);
 
         // 8. Find the Longest Palindrome Word
         // Input: ["level", "java", "radar", "stream"]
-        // Expected: "radar"
+        // Expected: "radar",level
         List<String> words3 = Arrays.asList("level", "java", "radar", "stream");
+      
+       String s=  words3.stream().filter(x->isPallindrom(x)).max((a,b)->Integer.compare(a.length(), b.length())).orElse("String is not pallidrom");
 
-        // Your Stream code here
+         System.out.println(s);
 
 
         // 9. Flatten Map<K, List<V>> to List<V>
@@ -117,6 +120,18 @@ System.out.println(count);
         // Expected: true
         List<Integer> nums4 = Arrays.asList(1, 2, 3, 4, 5);
 
-        // Your Stream code here
+    
+    }
+    private static boolean isPallindrom(String s){
+        int i=0;
+        int j = s.length()-1;
+        while (i!=j) {
+             if(s.charAt(i)!=s.charAt(j)){
+                return false;
+             }
+             i++;
+             j--;
+        }
+        return true;
     }
 }
