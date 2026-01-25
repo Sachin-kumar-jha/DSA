@@ -79,7 +79,9 @@ System.out.println(count);
         // Input: [1, 2, 0, 4]
         // Expected: 8
         List<Integer> nums3 = Arrays.asList(1, 2, 0, 4);
-
+       
+       Integer prodInteger=  nums3.stream().filter(n->n!=0).reduce(1,(a,b)->a*b);
+ System.out.println(prodInteger);
         // Your Stream code here
 
 
