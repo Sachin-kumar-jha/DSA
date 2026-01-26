@@ -1,6 +1,7 @@
 import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class StreamPractice5 {
 
@@ -112,15 +113,16 @@ System.out.println(count);
         map.put("B", Arrays.asList(3));
         map.put("C", Arrays.asList(4, 5));
 
-        // Your Stream code here
+       List<Integer> list = map.entrySet().stream().flatMap(x -> x.getValue().stream()).collect(Collectors.toList());
+ System.out.println(list);
 
 
         // 10. Check If a List Is Sorted in Ascending Order
         // Input: [1, 2, 3, 4, 5]
         // Expected: true
         List<Integer> nums4 = Arrays.asList(1, 2, 3, 4, 5);
-
-    
+       boolean bool =   IntStream.range(0, nums4.size()-1).allMatch(i->nums4.get(i)<=nums4.get(i+1));
+        System.out.println(bool);
     }
     private static boolean isPallindrom(String s){
         int i=0;
