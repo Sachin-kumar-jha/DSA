@@ -2,7 +2,7 @@ package String;
 
 public class AddBinary {
 
-  public StringBuilder binaryAdd(String s1,String s2){
+  public static String  binaryAdd(String s1,String s2){
     StringBuilder s = new StringBuilder();
     int m = s1.length()-1;
     int n = s2.length()-1;
@@ -25,13 +25,18 @@ public class AddBinary {
         carry =  (sum>1)?1:0;
     }
      
-    return s.reverse();
+    if(carry == 1){
+          s.append('1');
+    }
+
+    return s.reverse().toString();
 
   }
     public static void main(String[] args) {
         String s1 = "11";
         String s2 = "1";
-        StringBuilder s  = binaryAdd(s1,s2);
+        String s =  binaryAdd(s1,s2);
+     System.out.println(s);
     }
     
 }
